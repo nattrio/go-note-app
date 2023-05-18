@@ -1,38 +1,34 @@
 # Go Note App API
 
+## Description
+Go Note App is a simple note-taking application built with Go. It allows users to create, read, update, and delete notes via a RESTful API.
+
 ## Installation
 
-Create `app.env`
+To install and run Go Note App locally, follow these steps:
 
-```env
-DB_HOST=${HOST}
-DB_USERNAME=${USER}
-DB_PASSWORD=${PASSWORD}
-DB_NAME=${DBNAME}
-DB_PORT=${PORT}
+1. Clone the repository:
+
+```shell
+git clone https://github.com/nattrio/go-note-app.git
 ```
 
-Postgres with Docker
+2. Navigate to the project directory:
 
-- `docker pull postgres:alpine`
-- `docker run --name note_db_test -e POSTGRES_USER=${USER} -e POSTGRES_PASSWORD=${PASSWORD} -p ${PORT}:5432 -d postgres:alpine`
-- `docker exec -it note_db_test bash`
-- `psql -U ${USER}`
-- `CREATE DATABASE ${DBNAME};`
-
-Start App
-
-```bash
-go run main.go
+```shell
+cd go-note-app
 ```
 
-or
+3. Create a `.env` file in the project root directory and configure the required environment variables. You can use the provided `.env.example` file as a template.
 
-```bash
-air -c .air.toml
+4. Build and run the application using Docker Compose:
+
+```shell
+docker-compose up --build
 ```
+> This command will build the Docker image and start the application and its dependencies (PostgreSQL database) as Docker containers.
 
-The server will start running on http://localhost:3000.
+5. The Go Note App API should now be accessible at http://localhost:3000. You can send HTTP requests to this endpoint to interact with the application.
 
 ## Endpoints
 

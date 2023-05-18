@@ -1,6 +1,6 @@
 module github.com/nattrio/go-note-app
 
-go 1.20
+go 1.18
 
 require (
 	github.com/go-playground/validator/v10 v10.13.0
